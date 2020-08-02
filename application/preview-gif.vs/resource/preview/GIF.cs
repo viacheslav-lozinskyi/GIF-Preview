@@ -33,10 +33,10 @@ namespace resource.preview
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Height]]", a_Context.Height.ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Phisical Width]]", ((int)a_Context.PhysicalDimension.Width).ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Phisical Height]]", ((int)a_Context.PhysicalDimension.Height).ToString());
-                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Pixel Format]]", __GetPixelFormat(a_Context));
-                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Raw Format]]", "GIF");
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Horizontal Resolution]]", a_Context.HorizontalResolution.ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Vertical Resolution]]", a_Context.VerticalResolution.ToString());
+                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Pixel Format]]", __GetPixelFormat(a_Context));
+                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Raw Format]]", "GIF");
                     }
                 }
             }
