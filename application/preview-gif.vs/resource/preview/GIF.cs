@@ -28,11 +28,12 @@ namespace resource.preview
                 {
                     __Send(context, NAME.PATTERN.ELEMENT, 1, "[[Size]]: " + a_Context.Width.ToString() + " x " + a_Context.Height.ToString(), "");
                     {
+                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[File Name]]", url);
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[File Size]]", (new FileInfo(url).Length).ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Width]]", a_Context.Width.ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Height]]", a_Context.Height.ToString());
-                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Phisical Width]]", ((int)a_Context.PhysicalDimension.Width).ToString());
-                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Phisical Height]]", ((int)a_Context.PhysicalDimension.Height).ToString());
+                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Physical Width]]", ((int)a_Context.PhysicalDimension.Width).ToString());
+                        __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Physical Height]]", ((int)a_Context.PhysicalDimension.Height).ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Horizontal Resolution]]", a_Context.HorizontalResolution.ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Vertical Resolution]]", a_Context.VerticalResolution.ToString());
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Pixel Format]]", __GetPixelFormat(a_Context));
@@ -59,7 +60,7 @@ namespace resource.preview
         {
             switch (context.PixelFormat)
             {
-                case PixelFormat.DontCare: return "Dont Care";
+                case PixelFormat.DontCare: return "Don't Care";
                 case PixelFormat.Max: return "Max";
                 case PixelFormat.Indexed: return "Indexed";
                 case PixelFormat.Gdi: return "GDI";
