@@ -24,9 +24,10 @@ namespace resource.preview
                         __Send(context, NAME.PATTERN.PREVIEW, 1, "", "");
                     }
                 }
-                if (GetProperty(NAME.PROPERTY.PREVIEW_SHOW_FOOTER) != 0)
                 {
-                    __Send(context, NAME.PATTERN.ELEMENT, 1, "[[Size]]: " + a_Context.Width.ToString() + " x " + a_Context.Height.ToString(), "");
+                    context.
+                        SetState(NAME.STATE.FOOTER).
+                        Send(NAME.PATTERN.ELEMENT, 1, "[[Size]]: " + a_Context.Width.ToString() + " x " + a_Context.Height.ToString());
                     {
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[File Name]]", url);
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[File Size]]", (new FileInfo(url).Length).ToString());
