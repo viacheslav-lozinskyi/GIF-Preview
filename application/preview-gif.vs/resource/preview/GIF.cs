@@ -41,6 +41,9 @@ namespace resource.preview
                         __Send(context, NAME.PATTERN.VARIABLE, 2, "[[Raw Format]]", "GIF");
                     }
                 }
+                {
+                    a_Context.Dispose();
+                }
             }
             else
             {
